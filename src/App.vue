@@ -3,10 +3,9 @@
 
     <div class="nav-box">
       <ul class="nav">
-        <router-link to="/" exact tag="li" event="mouseover">
-          <i class="fa fa-home"></i>
-          <span>home</span>
-        </router-link>
+        <li>
+          <router-link :to="{path:'/home'}" event="mouseover">home</router-link>
+        </li>
         <li>
           <router-link :to="{path:'/document'}" event="mouseover">document</router-link>
         </li>
