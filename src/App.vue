@@ -8,7 +8,7 @@
           <span>home</span>
         </router-link>
         <li>
-          <router-link :to="{path:'/document'}" event="mouseover" active-class="activeClass">document</router-link>
+          <router-link :to="{path:'/document'}" event="mouseover">document</router-link>
         </li>
         <li>
           <router-link to="/about" event="mouseover">about</router-link>

@@ -10,15 +10,20 @@ a {
 }
 .nav-box {
   background: #eff4f8;
-  padding: 0px 300px;
+  padding: 0px 0rem;
+  position: fixed;
+  bottom: 0;left: 0;
 }
 .nav {
   overflow: hidden;
 }
 .nav li{
    float: left;
-   padding: 30px;
+   padding:0 0.43rem;
    cursor: pointer;
+   background: orange;
+   border-radius: 0.3rem;
+
 }
 .nav li a {
   text-align: center;
@@ -45,8 +50,4 @@ a {
 
 .is-active {
   background: yellow;
-}
-
-.activeClass {
-  background: pink;
 }
