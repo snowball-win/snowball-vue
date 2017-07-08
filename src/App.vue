@@ -7,13 +7,16 @@
           <router-link :to="{path:'/home'}" event="mouseover">home</router-link>
         </li>
         <li>
-          <router-link :to="{path:'/document'}" event="mouseover">document</router-link>
+          <router-link :to="{path:'/document'}" event="mouseover">doc</router-link>
         </li>
         <li>
           <router-link to="/about" event="mouseover">about</router-link>
         </li>
         <li>
           <router-link to="/user" event="mouseover">user</router-link>
+        </li>
+        <li>
+          <router-link to="/mine" event="mouseover">main</router-link>
         </li>
       </ul>
     </div>

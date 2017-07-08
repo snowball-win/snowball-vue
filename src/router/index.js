@@ -7,7 +7,7 @@ import home from '@/components/home'
 import document from '@/components/document'
 import about from '@/components/about'
 import user from '@/components/user'
-
+import mine from '@/components/mine'
 
 import noFound from '@/components/404'
 
@@ -81,6 +81,11 @@ let router = new VueRouter({
         default: document,
         slider: slider
       }
+    },
+    {
+      path: '/mine',
+      name: 'Mine',
+      component: mine
     },
     {
       path: '*',
