@@ -43,10 +43,10 @@ a {
   float: left;
 }
 
-.center {
+/*.center {
   text-align: center;
   font-size: 50px;
-}
+}*/
 
 .is-active {
   background: yellow;

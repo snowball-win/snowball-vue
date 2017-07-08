@@ -1,6 +1,10 @@
 <template>
-  <div style="height: 2000px;">
-    我是mine
+  <div class="wrapper">
+    <ul>
+      <li>
+        设置
+      </li>
+    </ul>
   </div>
 </template>
 
