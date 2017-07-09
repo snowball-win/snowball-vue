@@ -32,6 +32,25 @@
 <script>
     export default {}
 </script>
-<style>
+<style lang="less">
+	.is-active {
+		color: orange;
+	}
 
+		.nav {
+			overflow: hidden;
+			color: #FFFFFF;
+			li {
+				float: left;
+				padding: 0 0.43rem;
+				cursor: pointer;
+				background: greenyellow;
+				border-radius: 0.3rem;
+				width: 2.34rem;
+				a {
+					text-align: center;
+				}
+			}
+		}
+	
 </style>

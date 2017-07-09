@@ -8,7 +8,7 @@ a {
   text-decoration: none;
   color: #000;
 }
-.nav-box {
+/*.nav-box {
   background: #eff4f8;
   padding: 0px 0rem;
   position: fixed;
@@ -27,7 +27,7 @@ a {
 }
 .nav li a {
   text-align: center;
-}
+}*/
 .router-link-active {
   background: #fff;
 }
@@ -48,6 +48,6 @@ a {
   font-size: 50px;
 }*/
 
-.is-active {
+/*.is-active {
   background: yellow;
-}
+}*/
