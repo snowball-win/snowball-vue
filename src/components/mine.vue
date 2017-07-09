@@ -22,14 +22,33 @@
 				<span>671</span><br /><span>关注店铺</span>
 			</div>
 			<div>
-				<span>218</span><br /><span>足迹</span>
+				<span>218</span><br /><span>足迹</span> 
 			</div>
 		</li>
 	</ul>
 </template>
 
 <script>
-	export default {}
+	import axios from "axios"
+	export default {
+		name: "mainCollect",
+		data() {
+			return {
+				
+			}
+		},
+		created() {
+			axios({
+				method: "get",
+				url: "http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/collect",
+			}).then((response) => {
+				console.log(response.data.data[0].num)
+			}).catch((error) => {
+				console.log(error)
+			})
+
+		}
+	}
 </script>
 <style lang="less">
 	.wrapper {
@@ -37,26 +56,26 @@
 		min-height: 30rem;
 		font-size: 0.8rem;
 		background: #f4f4f4;
-		.head{
-			background:#eb5379;
-			height:5rem;
+		.head {
+			background: #eb5379;
+			height: 5rem;
 			padding: 0.2rem 0 0 0.2rem;
-			div:nth-child(1){
+			div:nth-child(1) {
 				color: #FFFFFF;
 				height: 2rem;
 			}
-			div:nth-child(2){
-				div:nth-child(1){
+			div:nth-child(2) {
+				div:nth-child(1) {
 					float: left;
 				}
-				div:nth-child(2){
+				div:nth-child(2) {
 					float: left;
 					color: #FFFFFF;
 					width: 13.3rem;
-					span{
+					span {
 						display: inline-block;
 						float: right;
-						background: rgba(154,54,79,.6);
+						background: rgba(154, 54, 79, .6);
 						font-size: 0.75rem;
 						height: 1rem;
 						line-height: 1rem;
@@ -71,17 +90,17 @@
 				width: 2.5rem;
 				height: 2.5rem;
 				overflow: hidden;
-				img{
+				img {
 					/*width: 100%;*/
 					height: 100%;
 				}
 			}
 		}
-		li:nth-child(2){
+		li:nth-child(2) {
 			background: #FFFFFF;
 			width: 100%;
 			height: 3rem;
-			div{
+			div {
 				float: left;
 				width: 5.3rem;
 				text-align: center;
@@ -89,5 +108,4 @@
 			}
 		}
 	}
-
 </style>

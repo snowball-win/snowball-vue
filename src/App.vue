@@ -4,19 +4,20 @@
 		<div class="nav-box">
 			<ul class="nav">
 				<li>
-					<router-link :to="{path:'/home'}" event="mouseover" tag="span">首页</router-link>
+					<!--<i class="fa fa-home"></i>-->
+					<router-link :to="{path:'/home'}" event="click" tag="span">首页</router-link>
 				</li>
 				<li>
-					<router-link :to="{path:'/document'}" event="mouseover" tag="span">读书</router-link>
+					<router-link :to="{path:'/document'}" event="click" tag="span">读书</router-link>
 				</li>
 				<li>
-					<router-link to="/about" event="mouseover" tag="span">消息</router-link>
+					<router-link to="/about" event="click" tag="span">消息</router-link>
 				</li>
 				<li>
-					<router-link to="/user" event="mouseover" tag="span">购物</router-link>
+					<router-link to="/user" event="click" tag="span">购物</router-link>
 				</li>
 				<li>
-					<router-link to="/mine" event="mouseover" tag="span">我的</router-link>
+					<router-link to="/mine" event="click" tag="span">我的</router-link>
 				</li>
 			</ul>
 		</div>
