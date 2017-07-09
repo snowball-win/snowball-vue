@@ -15,14 +15,8 @@
 			</div>
 		</li>
 		<li>
-			<div>
-				<span>1475</span><br /><span>收藏夹</span>
-			</div>
-			<div>
-				<span>671</span><br /><span>关注店铺</span>
-			</div>
-			<div>
-				<span>218</span><br /><span>足迹</span> 
+			<div  v-for="item,index in favorites">
+				<span>{{item.num}}</span><br /><span>{{item.name}}</span>
 			</div>
 		</li>
 	</ul>
@@ -34,7 +28,7 @@
 		name: "mainCollect",
 		data() {
 			return {
-				
+				favorites:""
 			}
 		},
 		created() {
@@ -42,7 +36,9 @@
 				method: "get",
 				url: "http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/collect",
 			}).then((response) => {
-				console.log(response.data.data[0].num)
+				this.favorites = response.data.data;
+				console.log(response.data.data)
+				console.log(this.favorites)
 			}).catch((error) => {
 				console.log(error)
 			})
