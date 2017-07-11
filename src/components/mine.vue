@@ -19,6 +19,11 @@
 				<span>{{item.num}}</span><br /><span>{{item.name}}</span>
 			</div>
 		</li>
+		<li>
+			<div v-for="item,index in hobby">
+				<span><img src="../assets/img/touxiang_xueqiu.jpg"/></span><span>{{item.name}}</span>
+			</div>
+		</li>
 	</ul>
 </template>
 
@@ -28,7 +33,8 @@
 		name: "mainCollect",
 		data() {
 			return {
-				favorites:""
+				favorites:"",
+				hobby:""
 			}
 		},
 		created() {
@@ -37,12 +43,18 @@
 				url: "http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/collect",
 			}).then((response) => {
 				this.favorites = response.data.data;
-				console.log(response.data.data)
-				console.log(this.favorites)
+			}).catch((error) => {
+				console.log(error)
+			}),
+			axios({
+				method: "get",
+				url: "http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/hobby",
+			}).then((response) => {
+				console.log(response)
+				this.hobby = response.data.hobby;
 			}).catch((error) => {
 				console.log(error)
 			})
-
 		}
 	}
 </script>
@@ -101,6 +113,31 @@
 				width: 5.3rem;
 				text-align: center;
 				margin-top: 0.5rem;
+			}
+		}
+		li:nth-child(3){
+			background: #FFFFFF;
+			margin-top: 0.5rem;
+			padding: 0.7rem 0;
+			width: 100%;
+			height: 3rem;
+			div{
+				width: 4rem;
+				float: left;
+				span:nth-child(1){
+					display: block;
+					width: 1.87rem;
+					margin:0 auto;
+					img{
+						width: 100%;
+						height: 100%;
+					}
+				}
+				span:nth-child(2){
+					display: block;
+					width: 100%;
+					text-align: center;
+				}
 			}
 		}
 	}
