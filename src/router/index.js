@@ -8,7 +8,7 @@ import document from '@/components/document'
 import about from '@/components/about'
 import user from '@/components/user'
 import mine from '@/components/mine'
-
+import articleDetails from '@/components/articleDetails'
 import noFound from '@/components/404'
 
 import study from '@/views/study'
@@ -16,7 +16,6 @@ import work from '@/views/work'
 import hobby from '@/views/hobby'
 
 import slider from '@/views/slider'
-
 let router = new VueRouter({
   mode: 'history',
   linkActiveClass: 'is-active',
@@ -86,6 +85,11 @@ let router = new VueRouter({
       path: '/mine',
       name: 'Mine',
       component: mine
+    },
+    {
+      path: '/articleDetails',
+      name: 'articleDetails',
+      component: articleDetails
     },
     {
       path: '*',

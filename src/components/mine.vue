@@ -5,12 +5,22 @@
 				<router-link :to="{path:'/home'}" event="click" tag="span">设置</router-link>
 			</div>
 			<div>
-				<div class="headImg">
+				<router-link exact :to="{path:'articleDetails',query:{privacy:'privacy'}}" tag="div" class="headImg">
 					<img src="../assets/img/touxiang_xueqiu.jpg" alt="头像" />
-				</div>
+				</router-link>
 				<div>
 					snowball<br /><small>超级会员</small>
-					<span>颜值100分></span>
+					<span>
+						{{city}}
+					</span>
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height: 1rem;">
+							<circle cx="11" cy="11" r="10" stroke="red" stroke-width="2" fill="pink" />
+							<circle cx="11" cy="11" r="3" stroke="red" stroke-width="2" fill="pink" />
+							<!--<line x1="1" y1="10" x2="11" y2="30" stroke="red" stroke-width="2" />-->
+							<!--<line x1="21" y1="10" x2="11" y2="30" stroke="red" stroke-width="2" />-->
+						</svg>
+					</span>
 				</div>
 			</div>
 		</li>
@@ -34,7 +44,8 @@
 		data() {
 			return {
 				favorites:"",
-				hobby:""
+				hobby:"",
+				city:"1"
 			}
 		},
 		created() {
@@ -50,8 +61,17 @@
 				method: "get",
 				url: "http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/hobby",
 			}).then((response) => {
-				console.log(response)
 				this.hobby = response.data.hobby;
+				console.log(this.$route)
+			}).catch((error) => {
+				console.log(error)
+			}),
+			axios({
+				method: "get",
+				url: "http://restapi.amap.com/v3/ip?key=4fc1f8855c287111b75bba807f042c83",
+			}).then((response) => {
+				this.city = response.data.city;
+				console.log(response.data.city)
 			}).catch((error) => {
 				console.log(error)
 			})
@@ -80,7 +100,7 @@
 					float: left;
 					color: #FFFFFF;
 					width: 13.3rem;
-					span {
+					span:nth-child(3) {
 						display: inline-block;
 						float: right;
 						background: rgba(154, 54, 79, .6);
@@ -88,8 +108,20 @@
 						height: 1rem;
 						line-height: 1rem;
 						border-radius: 0.31rem;
-						width: 5rem;
+						width: 3rem;
 						text-align: center;
+						margin-top: -20px;
+						img{
+							width: 0.75rem;
+							height: 0.75rem;
+							margin-top: -0.15rem;
+							display: inline-block;
+							vertical-align: middle;
+						}
+					}
+					span:nth-child(4){
+						float: right;
+						width: 1rem;
 						margin-top: -20px;
 					}
 				}
