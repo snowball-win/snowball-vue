@@ -4,11 +4,18 @@
     "stage-2"
   ],
   "plugins": ["transform-runtime"],
+  "plugins": [["component", [
+    {
+      "libraryName": "element-ui",
+      "styleLibraryName": "theme-default"
+    }
+  ]]],
   "comments": false,
   "env": {
     "test": {
       "presets": ["env", "stage-2"],
-      "plugins": [ "istanbul" ]
+      "plugins": [ "istanbul" ],
+      "presets": ["vue-app"] 
     }
   }
 }
