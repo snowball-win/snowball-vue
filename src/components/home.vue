@@ -1,10 +1,10 @@
 <template>
 	<div style="height: 2000px;">
 		欢迎来到首页
-		<div class="searchIpt">
+		<!--<div class="searchIpt">
 			<select-input is-show.sync="listShow">1</select-input>
 			<list v-show="listShow" :data="listData">1</list>
-		</div>
+		</div>-->
 		<div class="block">
 			<el-carousel height="150px">
 				<el-carousel-item v-for="item in slideshow" :key="item.index">
