@@ -1,10 +1,11 @@
 <template>
 	<div style="height: 2000px;">
-		欢迎来到首页
-		<!--<div class="searchIpt">
-			<select-input is-show.sync="listShow">1</select-input>
-			<list v-show="listShow" :data="listData">1</list>
-		</div>-->
+		<div class="search">
+			<span>				
+				<router-link :to="{path:'/select'}" event="focus" tag="input" placeholder="懂你想要的..."></router-link>
+			</span>
+		</div>
+
 		<div class="block">
 			<el-carousel height="150px">
 				<el-carousel-item v-for="item in slideshow" :key="item.index">
@@ -19,10 +20,9 @@
 
 <script>
 	import Vue from 'vue'
+	import axios from "axios"
 	import ElementUI from 'element-ui'
 	import 'element-ui/lib/theme-default/index.css'
-//	import aelectInput from '@/components/selectInput'
-//	import list from '@/components/list'
 	Vue.use(ElementUI)
 	let slideshow = [{
 			id: 1,
@@ -65,7 +65,29 @@
 		}
 	}
 </script>
-<style>
+<style lang="less">
+	.search{
+		width: 100%;
+		height: 1.5rem;
+		background: #CCCCCC;
+		padding: 0.2rem;
+		span{
+			display: inline-block;
+			border:1px solid #333333;
+			width: 95%;
+			height: 1.2rem;
+			margin-top: 0.12rem;
+			overflow: hidden;
+			border-radius: 0.3rem;
+			input{
+				background: pink;
+				width: 100%;
+				height: 1.2rem;
+				border: none;
+				text-indent: 1rem;
+			}
+		}
+	}
 	.el-carousel__item h3 {
 		color: #475669;
 		font-size: 14px;

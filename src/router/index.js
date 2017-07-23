@@ -11,6 +11,7 @@ import mine from '@/components/mine'
 import articleDetails from '@/components/articleDetails'
 import noFound from '@/components/404'
 import increment from  '@/components/increment'
+import Select from '@/components/select'
 
 import study from '@/views/study'
 import work from '@/views/work'
@@ -96,6 +97,11 @@ let router = new VueRouter({
       path: '/increment', // /hobby
       name: 'Increment',
       component: increment
+    },
+    {
+      path: '/select',
+      name: 'Select',
+      component: Select
     },
     {
       path: '*',
