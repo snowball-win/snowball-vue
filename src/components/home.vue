@@ -27,7 +27,7 @@
 	let slideshow = [{
 			id: 1,
 			tip: 'vip',
-			img: "../../static/imgs/logo.png",
+			img: "../../static/imgs/xiaoqing.jpg",
 			userName: "leo1",
 			sex: '男',
 			hobby: '写代码'
@@ -36,7 +36,7 @@
 			id: 2,
 			tip: 'vip',
 			userName: "leo2",
-			img: "../../static/imgs/logo.png",
+			img: "../../static/imgs/xiaoqing1.jpg",
 			sex: '男',
 			hobby: '唱歌'
 		},
@@ -44,7 +44,7 @@
 			id: 3,
 			tip: 'common',
 			userName: "leo3",
-			img: "../../static/imgs/logo.png",
+			img: "../../static/imgs/xiaoqing2.jpg",
 			sex: '男',
 			hobby: '读书'
 		},
@@ -52,7 +52,7 @@
 			id: 3,
 			tip: 'common',
 			userName: "leo3",
-			img: "../../static/imgs/logo.png",
+			img: "../../static/imgs/xiaoqing3.jpg",
 			sex: '男',
 			hobby: '读书'
 		}
@@ -88,20 +88,27 @@
 			}
 		}
 	}
-	.el-carousel__item h3 {
-		color: #475669;
-		font-size: 14px;
-		opacity: 0.75;
-		/*line-height: 150px;*/
-		margin: 0;
-		text-align: center;
-	}
+	.block{
+		img{
+			display: inline-block;
+			height: 7rem;
+			width: 100%;
+		}
+		.el-carousel__item h3 {
+			color: #475669;
+			font-size: 14px;
+			opacity: 0.75;
+			/*line-height: 150px;*/
+			margin: 0;
+			text-align: center;
+		}
 	
-	.el-carousel__item:nth-child(2n) {
-		background-color: #99a9bf;
-	}
+		.el-carousel__item:nth-child(2n) {
+			background-color: #99a9bf;
+		}
 	
-	.el-carousel__item:nth-child(2n+1) {
-		background-color: #d3dce6;
+		.el-carousel__item:nth-child(2n+1) {
+			background-color: #d3dce6;
+		}
 	}
 </style>
