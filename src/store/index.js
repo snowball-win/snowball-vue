@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 Vue.use(Vuex)
 //定义一个容器
 let store = new Vuex.Store({
 	state:{
-		count:100
+		count:100,
+		title:'',
+		list:[]
 	},
 	getters:{
 		filterCount(state){
@@ -20,6 +23,12 @@ let store = new Vuex.Store({
 		},
 		deIncrement(state,payload){
 			state.count -= payload.de;
+		},
+		changeTitle(state,payload){
+			state.title = payload.title
+		},
+		changeList(state,list){
+			state.list = list;
 		}
 	},
 	actions:{
@@ -34,6 +43,16 @@ let store = new Vuex.Store({
 		textAction(context,obj){
 			console.log("我被触发了")
 			console.log(obj)
+		},
+		getListAction({commit}){
+			axios.get('http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/searchList')
+			.then((data)=>{
+				console.log(data.data.listData)
+				commit("changeList",data.data.listData)//拿到数据后，提交mutations，改变状态
+			})
+			.catch((error)=>{
+				console.log(error)
+			})
 		}
 	}
 })
