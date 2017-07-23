@@ -10,6 +10,7 @@ import user from '@/components/user'
 import mine from '@/components/mine'
 import articleDetails from '@/components/articleDetails'
 import noFound from '@/components/404'
+import increment from  '@/components/increment'
 
 import study from '@/views/study'
 import work from '@/views/work'
@@ -90,6 +91,11 @@ let router = new VueRouter({
       path: '/articleDetails',
       name: 'articleDetails',
       component: articleDetails
+    },
+    {
+      path: '/increment', // /hobby
+      name: 'Increment',
+      component: increment
     },
     {
       path: '*',

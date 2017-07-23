@@ -5,6 +5,7 @@ import '@/assets/css/app'
 import '../config/rem'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import store from './store'
 Vue.use(ElementUI)
 //import { Button, Select } from 'element-ui'
 //Vue.use(Button)
@@ -12,6 +13,7 @@ Vue.use(ElementUI)
 new Vue({
   el: "#app",
   router,
+  store,
   template: '<App />',
   components: {
     App
