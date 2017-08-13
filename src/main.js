@@ -6,6 +6,7 @@ import '../config/rem'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import store from './store'
+
 Vue.use(ElementUI)
 //import { Button, Select } from 'element-ui'
 //Vue.use(Button)

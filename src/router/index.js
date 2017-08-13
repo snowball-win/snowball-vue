@@ -12,6 +12,8 @@ import articleDetails from '@/components/articleDetails'
 import noFound from '@/components/404'
 import increment from  '@/components/increment'
 import Select from '@/components/select'
+import shoppingCart from  '@/components/shoppingCart'
+import news from  '@/components/news'
 
 import study from '@/views/study'
 import work from '@/views/work'
@@ -102,6 +104,16 @@ let router = new VueRouter({
       path: '/select',
       name: 'Select',
       component: Select
+    },
+    {
+      path: '/shoppingCart',
+      name: 'shoppingCart',
+      component: shoppingCart
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: news
     },
     {
       path: '*',

@@ -55,6 +55,7 @@
 		position: fixed;
 		bottom: 0;
 		left: 0;
+		z-index: 4;
 		.nav {
 			overflow: hidden;
 			color: #FFFFFF;
