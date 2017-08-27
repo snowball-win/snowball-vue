@@ -6,8 +6,12 @@ import '../config/rem'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import store from './store'
+import VueJsonp from 'vue-jsonp'
+import VueScroller from 'vue-scroller'
 
 Vue.use(ElementUI)
+Vue.use(VueJsonp)
+Vue.use(VueScroller)
 //import { Button, Select } from 'element-ui'
 //Vue.use(Button)
 
