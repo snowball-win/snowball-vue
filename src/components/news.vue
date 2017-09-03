@@ -27,12 +27,14 @@
 				:on-refresh="refresh"
 				refresh-text="snowball"
 				:on-infinite="infinite"
+				ref="myRef"
 			>
 				<swiper :list="swiperList,swiperIndex" :loop="true"></swiper>
 				<marquee class="my-marquee">
 					<marquee-item v-for="list in marqueeList" :key="list.typeid"><a :href="list.url">{{list.title}}</a></marquee-item>
 				</marquee>
 				<panel :list="dataList"></panel>
+				<panel :list="moreDataList"></panel>
 			</scroller>
 			
 		</view-box>
@@ -53,7 +55,21 @@
 		MarqueeItem,
 		Panel
 	} from 'vux';
-
+	var refreshKey = ['A','B01','B02','B03','B04','B05','B06','B07','B08','B09','B10']
+	var key = 0;
+	var start = 0;
+	var end = start + 9;
+	var keyValue = 'A';
+	var initLoaded = false;
+	function getRefreshKey(){
+		var keyValue = refreshKey[key]
+		key+=1;
+		console.log(refreshKey.length)
+		if(key == refreshKey.length-1){
+			key = 0;
+		}
+		return keyValue;
+	}
 	export default {
 		name: 'appNews',
 		components: {
@@ -83,13 +99,14 @@
 				swiperList: [],
 				swiperIndex: 0,
 				dataList: dataList,
-				marqueeList:[]
+				marqueeList:[],
+				moreDataList:[]
 			}
 		},
 		created(){
 			//轮播图的数据
 			this.$jsonp("http://3g.163.com/touch/jsonp/sy/recommend/0-9.html").then(data=>{
-				console.log(data)
+				//console.log(data)
 				this.swiperList = data.focus.filter(item=>{
 					return item.addata === null;
 				}).map(item =>{
@@ -125,14 +142,63 @@
 						url:item.link,
 					}
 				})
+				initLoaded = true;
 			})
 		},
 		methods:{
 			refresh(){
-				console.log(1)
+				//console.log(1)
+				getRefreshKey()
+				this.$jsonp("http://3g.163.com/touch/jsonp/sy/recommend/0-9.html",{
+					miss:'00',
+					refresh:keyValue
+				}).then(data=>{
+					console.log(data)
+					console.log(this.$refs.myRef)
+					//刷新首屏新闻列表
+					this.dataList = data.list.filter(item=>{
+						return item.addata === null;
+					}).map(item =>{
+						return{
+							src:item.picInfo[0].url,
+							title:item.title,
+							desc:item.digest,
+							url:item.link,
+						}
+					})
+					this.$refs.myRef.finishPullToRefresh()
+					this.$vux.toast.text(`当前一共刷新了${this.dataList.length}`,"top")
+				})
 			},
 			infinite(){
-				console.log(2)
+				console.log(222)
+				if(!initLoaded){
+					this.$refs.myRef.finishInfinite();
+					return;
+				}
+				this.$jsonp(`http:\/\/3g.163.com/touch/jsonp/sy/recommend/${start}-${end}.html`,{
+					miss:'00',
+					refresh:keyValue
+				}).then(data=>{
+					this.moreDataList = data.list.filter(item=>{
+						return item.addata === null;
+					}).map(item =>{
+						if(!item.picInfo[0]){
+							var imgSrc = ""
+						}else{
+							var imgSrc = item.picInfo[0].url
+						}
+						return{
+							src:imgSrc,
+							title:item.title,
+							desc:item.digest,
+							url:item.link,
+						}
+					})
+					start += 10;
+					end = start + 9;
+					this.$refs.myRef.finishInfinite();
+				})
 			}
 		}
 	}
