@@ -2,7 +2,7 @@
 	<div style="height: 2000px;">
 		<div class="search">
 			<span>				
-				<router-link :to="{path:'/select'}" event="focus" tag="input" placeholder="懂你想要的..."></router-link>
+				<router-link :to="{path:'/select'}" event="focus" tag="input" placeholder="hello world..."></router-link>
 			</span>
 		</div>
 
@@ -14,6 +14,15 @@
 					</router-link>
 				</el-carousel-item>
 			</el-carousel>
+		</div>
+		<div>hello...</div>
+		<div class="picWall">
+			<img src="../../static/imgs/fengjing1.jpg"/>
+			<img src="../../static/imgs/fengjing2.jpg"/>
+			<img src="../../static/imgs/fengjing3.jpg"/>
+			<img src="../../static/imgs/fengjing4.jpg"/>
+			<img src="../../static/imgs/fengjing5.jpg"/>
+			<img src="../../static/imgs/fengjing6.jpg"/>
 		</div>
 	</div>
 </template>
@@ -27,7 +36,7 @@
 	let slideshow = [{
 			id: 1,
 			tip: 'vip',
-			img: "../../static/imgs/xiaoqing.jpg",
+			img: "../../static/imgs/banner1.png",
 			userName: "leo1",
 			sex: '男',
 			hobby: '写代码'
@@ -36,7 +45,7 @@
 			id: 2,
 			tip: 'vip',
 			userName: "leo2",
-			img: "../../static/imgs/xiaoqing1.jpg",
+			img: "../../static/imgs/banner2.jpg",
 			sex: '男',
 			hobby: '唱歌'
 		},
@@ -44,7 +53,7 @@
 			id: 3,
 			tip: 'common',
 			userName: "leo3",
-			img: "../../static/imgs/xiaoqing2.jpg",
+			img: "../../static/imgs/fengjing3.jpg",
 			sex: '男',
 			hobby: '读书'
 		},
@@ -52,7 +61,7 @@
 			id: 3,
 			tip: 'common',
 			userName: "leo3",
-			img: "../../static/imgs/xiaoqing3.jpg",
+			img: "../../static/imgs/fengjing4.jpg",
 			sex: '男',
 			hobby: '读书'
 		}
@@ -110,5 +119,8 @@
 		.el-carousel__item:nth-child(2n+1) {
 			background-color: #d3dce6;
 		}
+	}
+	.picWall img{
+		width: 100%;
 	}
 </style>

@@ -180,21 +180,22 @@
 					miss:'00',
 					refresh:keyValue
 				}).then(data=>{
-					this.moreDataList = data.list.filter(item=>{
-						return item.addata === null;
+					this.dataList = data.list.filter(item=>{
+						return item.addata === null&&item.picInfo[0];
 					}).map(item =>{
-						if(!item.picInfo[0]){
-							var imgSrc = ""
-						}else{
-							var imgSrc = item.picInfo[0].url
-						}
+//						if(!item.picInfo[0]){
+//							var imgSrc = ""
+//						}else{
+//							var imgSrc = item.picInfo[0].url
+//						}
 						return{
-							src:imgSrc,
+							src:item.picInfo[0].url,
 							title:item.title,
 							desc:item.digest,
 							url:item.link,
 						}
 					})
+					this.moreDataList = this.moreDataList.concat(this.dataList)
 					start += 10;
 					end = start + 9;
 					this.$refs.myRef.finishInfinite();
