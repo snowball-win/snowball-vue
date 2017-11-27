@@ -1,5 +1,6 @@
 <template>
 	<div>i am article details</div>
+	
 </template>
 
 <script>

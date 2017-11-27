@@ -9,9 +9,12 @@
 		<div class="block">
 			<el-carousel height="150px">
 				<el-carousel-item v-for="item in slideshow" :key="item.index">
-					<router-link exact :to="{path:'articleDetails',query:{privacy:'privacy'}}" tag="div">
+					<!--<router-link exact :to="{path:'articleDetails',query:{privacy:'privacy'}}" tag="div">
 						<img :src="item.img" />
-					</router-link>
+					</router-link>-->
+					<a :href="item.href">
+						<img :src="item.img" />
+					</a>
 				</el-carousel-item>
 			</el-carousel>
 		</div>
@@ -39,7 +42,8 @@
 			img: "../../static/imgs/banner1.png",
 			userName: "leo1",
 			sex: '男',
-			hobby: '写代码'
+			hobby: '写代码',
+			href:'https://www.baidu.com/'
 		},
 		{
 			id: 2,
@@ -47,7 +51,8 @@
 			userName: "leo2",
 			img: "../../static/imgs/banner2.jpg",
 			sex: '男',
-			hobby: '唱歌'
+			hobby: '唱歌',
+			href:'http://www.ifeng.com/'
 		},
 		{
 			id: 3,
@@ -55,7 +60,8 @@
 			userName: "leo3",
 			img: "../../static/imgs/fengjing3.jpg",
 			sex: '男',
-			hobby: '读书'
+			hobby: '读书',
+			href:'https://www.taobao.com/'
 		},
 		{
 			id: 3,
@@ -63,7 +69,8 @@
 			userName: "leo3",
 			img: "../../static/imgs/fengjing4.jpg",
 			sex: '男',
-			hobby: '读书'
+			hobby: '读书',
+			href:'https://segmentfault.com/'
 		}
 	]
 	export default {
