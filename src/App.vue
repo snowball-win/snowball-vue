@@ -25,7 +25,7 @@
 		<router-view name="slider"></router-view>
 
 		<router-view class="center"></router-view>
-
+		<div class="backTop" @click="backTop"></div>
 	</div>
 </template>
 
@@ -39,6 +39,11 @@
 		data() {
 			return {
 				index: '/home'
+			}
+		},
+		methods:{
+			backTop:()=>{
+				document.documentElement.scrollTop= document.body.scrollTop =0;
 			}
 		}
 	}
@@ -71,5 +76,16 @@
 				}
 			}
 		}
+	}
+	.backTop{
+		width: 1.5rem;
+		height: 1.5rem;
+		border: 1px solid #ccc;
+		border-radius: 50%;
+		position: fixed;
+		background: url(../static/imgs/backtop.png);
+		background-size:  100% 100%;
+		right: 1rem;
+		bottom: 2rem;
 	}
 </style>

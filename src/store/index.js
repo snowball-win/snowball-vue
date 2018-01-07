@@ -45,7 +45,7 @@ let store = new Vuex.Store({
 			console.log(obj)
 		},
 		getListAction({commit}){
-			axios.get('http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/searchList')
+			axios.get('/mock/5961e5339adc231f357c21bc/snowball/searchList')
 			.then((data)=>{
 				console.log(data.data.listData)
 				commit("changeList",data.data.listData)//拿到数据后，提交mutations，改变状态

@@ -18,7 +18,10 @@
 				</el-carousel-item>
 			</el-carousel>
 		</div>
-		<div>hello...</div>
+		<div>
+			hello...
+			<my-component></my-component>
+		</div>
 		<div class="picWall">
 			<img src="../../static/imgs/fengjing1.jpg"/>
 			<img src="../../static/imgs/fengjing2.jpg"/>
@@ -27,6 +30,7 @@
 			<img src="../../static/imgs/fengjing5.jpg"/>
 			<img src="../../static/imgs/fengjing6.jpg"/>
 		</div>
+		
 	</div>
 </template>
 
@@ -80,6 +84,10 @@
 			}
 		}
 	}
+	
+	Vue.component('my-component', {
+	  template: '<div>A custom component!</div>'
+	})
 </script>
 <style lang="less">
 	.search{
@@ -129,5 +137,16 @@
 	}
 	.picWall img{
 		width: 100%;
+	}
+	.backTop{
+		width: 1.5rem;
+		height: 1.5rem;
+		border: 1px solid #ccc;
+		border-radius: 50%;
+		position: fixed;
+		background: url(../../static/imgs/backtop.png);
+		background-size:  100% 100%;
+		right: 1rem;
+		bottom: 2rem;
 	}
 </style>
