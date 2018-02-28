@@ -15,6 +15,7 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "vue": "^2.3.3",
+    "vue-aliplayer": "^0.0.5",
     "vue-jsonp": "^0.1.6",
     "vue-router": "^2.3.1",
     "vue-scroller": "^2.2.2",

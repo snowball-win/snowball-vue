@@ -20,12 +20,12 @@
 		</div>
 		<div>hello...</div>
 		<div class="picWall">
-			<img src="../../static/imgs/fengjing1.jpg"/>
-			<img src="../../static/imgs/fengjing2.jpg"/>
-			<img src="../../static/imgs/fengjing3.jpg"/>
-			<img src="../../static/imgs/fengjing4.jpg"/>
-			<img src="../../static/imgs/fengjing5.jpg"/>
-			<img src="../../static/imgs/fengjing6.jpg"/>
+			<img src="/static/imgs/fengjing1.jpg"/>
+			<img src="/static/imgs/fengjing2.jpg"/>
+			<img src="/static/imgs/fengjing3.jpg"/>
+			<img src="/static/imgs/fengjing4.jpg"/>
+			<img src="/static/imgs/fengjing5.jpg"/>
+			<img src="/static/imgs/fengjing6.jpg"/>
 		</div>
 	</div>
 </template>

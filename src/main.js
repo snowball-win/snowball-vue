@@ -9,11 +9,13 @@ import store from './store'
 import VueJsonp from 'vue-jsonp'
 import VueScroller from 'vue-scroller'
 import {ToastPlugin} from 'vux'
+import VueAliplayer from 'vue-aliplayer'
 
 Vue.use(ElementUI)
 Vue.use(VueJsonp)
 Vue.use(VueScroller)
 Vue.use(ToastPlugin)
+Vue.use(VueAliplayer)
 //import { Button, Select } from 'element-ui'
 //Vue.use(Button)
 

@@ -14,6 +14,9 @@ import increment from  '@/components/increment'
 import Select from '@/components/select'
 import shoppingCart from  '@/components/shoppingCart'
 import news from  '@/components/news'
+import barrage from  '@/components/barrage'
+import VueAliplayer from  '@/components/VueAliplayer'
+import snow from '@/components/snow'
 
 import study from '@/views/study'
 import work from '@/views/work'
@@ -91,6 +94,11 @@ let router = new VueRouter({
       component: mine
     },
     {
+      path: '/snow',  // /snow
+      name: 'snow',
+      component: snow
+    },
+    {
       path: '/articleDetails',
       name: 'articleDetails',
       component: articleDetails
@@ -114,6 +122,16 @@ let router = new VueRouter({
       path: '/news',
       name: 'news',
       component: news
+    },
+    {
+      path: '/barrage',
+      name: 'barrage',
+      component: barrage
+    },
+    {
+      path: '/VueAliplayer',
+      name: 'VueAliplayer',
+      component: VueAliplayer
     },
     {
       path: '*',

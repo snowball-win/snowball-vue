@@ -20,6 +20,7 @@
 					<router-link to="/mine" event="click" tag="span">我的</router-link>
 				</li>
 			</ul>
+			<div @click="backTop()" class="backTop"></div>
 		</div>
 
 		<router-view name="slider"></router-view>
@@ -40,8 +41,32 @@
 			return {
 				index: '/home'
 			}
+		},
+		methods:{
+			backTop(){
+				var Tween = {
+					Linear: function(t, b, c, d) { //匀速
+					    return c * t / d + b; 
+					}
+				}
+				Math.tween = Tween;
+				var t = 1;
+                const b = document.body.scrollTop;
+                const c = 50;
+                const d = 5;
+                const setInt = setInterval(()=>{
+                    t--;
+                    console.log(t)
+                    if(document.body.scrollTop == 0){clearInterval(setInt)}
+                    console.log(t);
+                    const backTop = Tween.Linear(t,b,c,d);
+                     console.log(backTop);
+                    document.body.scrollTop = backTop;
+                },20)
+			}
 		}
 	}
+	
 </script>
 
 <style lang="less">
@@ -71,5 +96,16 @@
 				}
 			}
 		}
+	}
+	.backTop{
+		width: 1.5rem;
+		height: 1.5rem;
+		border: 1px solid #CCCCCC;
+		position: fixed;
+		right: 1rem;
+		bottom: 2rem;
+		border-radius: 50%;
+		background: url(/static/imgs/backtop20180226.png) no-repeat 40%;
+		background-size: 70% 100%;
 	}
 </style>

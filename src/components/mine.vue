@@ -51,7 +51,7 @@
 		created() {
 			axios({
 				method: "get",
-				url: "http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/collect",
+				url: "/mock/5961e5339adc231f357c21bc/snowball/collect",
 			}).then((response) => {
 				this.favorites = response.data.data;
 			}).catch((error) => {
@@ -59,7 +59,7 @@
 			}),
 			axios({
 				method: "get",
-				url: "http://easy-mock.com/mock/5961e5339adc231f357c21bc/snowball/hobby",
+				url: "/mock/5961e5339adc231f357c21bc/snowball/hobby",
 			}).then((response) => {
 				this.hobby = response.data.hobby;
 				console.log(this.$route)
