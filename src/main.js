@@ -10,12 +10,15 @@ import VueJsonp from 'vue-jsonp'
 import VueScroller from 'vue-scroller'
 import {ToastPlugin} from 'vux'
 import VueAliplayer from 'vue-aliplayer'
+import VueVideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
 
 Vue.use(ElementUI)
 Vue.use(VueJsonp)
 Vue.use(VueScroller)
 Vue.use(ToastPlugin)
 Vue.use(VueAliplayer)
+Vue.use(VueVideoPlayer)
 //import { Button, Select } from 'element-ui'
 //Vue.use(Button)
 

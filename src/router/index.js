@@ -16,6 +16,7 @@ import shoppingCart from  '@/components/shoppingCart'
 import news from  '@/components/news'
 import barrage from  '@/components/barrage'
 import VueAliplayer from  '@/components/VueAliplayer'
+import VueVideoPlayer from  '@/components/VueVideoPlayer'
 import snow from '@/components/snow'
 
 import study from '@/views/study'
@@ -132,6 +133,11 @@ let router = new VueRouter({
       path: '/VueAliplayer',
       name: 'VueAliplayer',
       component: VueAliplayer
+    },
+    {
+      path: '/VueVideoPlayer',
+      name: 'VueVideoPlayer',
+      component: VueVideoPlayer
     },
     {
       path: '*',
