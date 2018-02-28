@@ -52,8 +52,8 @@
 				Math.tween = Tween;
 				var t = 1;
                 const b = document.body.scrollTop;
-                const c = 50;
-                const d = 5;
+                const c = 100;
+                const d = 10;
                 const setInt = setInterval(()=>{
                     t--;
                     console.log(t)

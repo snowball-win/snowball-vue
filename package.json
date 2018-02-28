@@ -19,6 +19,7 @@
     "vue-jsonp": "^0.1.6",
     "vue-router": "^2.3.1",
     "vue-scroller": "^2.2.2",
+    "vue-video-player": "^5.0.2",
     "vuex": "^2.3.1",
     "vux": "^2.5.7"
   },
